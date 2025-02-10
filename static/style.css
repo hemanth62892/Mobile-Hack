@@ -1,0 +1,22 @@
+body.red-screen {
+    background-color: red;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    padding-top: 100px;
+}
+
+.danger-btn, .alert-btn {
+    font-size: 20px;
+    padding: 15px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.happy-screen {
+    background-color: lightblue;
+    color: black;
+    text-align: center;
+    font-size: 24px;
+    padding-top: 100px;
+}

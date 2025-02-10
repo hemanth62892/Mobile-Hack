@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -6,9 +6,13 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-@app.route('/static/<path:filename>')
-def static_files(filename):
-    return send_from_directory('static', filename)
+@app.route('/hacked')
+def hacked():
+    return render_template('hacked.html')
+
+@app.route('/birthday')
+def birthday():
+    return render_template('birthday.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
