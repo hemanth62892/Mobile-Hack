@@ -3,17 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday!</title>
+    <title>🎂 Happy Birthday! 🎉</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <script>
-        window.onload = function() {
-            var audio = new Audio("{{ url_for('static', filename='birthday.mp3') }}");
-            audio.play();
-        };
-    </script>
 </head>
-<body class="happy-screen">
-    <h1>🎉 Happy Birthday! 🎉</h1>
-    <img src="{{ url_for('static', filename='birthday.jpg') }}" alt="Birthday">
+<body class="birthday-screen">
+
+    <!-- Birthday Message -->
+    <div class="birthday-box">
+        <h1 class="birthday-title">🎉 Happy Birthday! 🎉</h1>
+        <p class="birthday-message">May your day be filled with love, laughter, and happiness! 🥳🎂</p>
+
+        <!-- Centered Image -->
+        <img src="{{ url_for('static', filename='birthday.jpg') }}" alt="Birthday Celebration" class="birthday-image">
+
+        <!-- Background Music -->
+        <audio id="bg-music" autoplay loop>
+            <source src="{{ url_for('static', filename='birthday_song.mp3') }}" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+    </div>
+
 </body>
 </html>
