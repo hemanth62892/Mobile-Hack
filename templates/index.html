@@ -1,13 +1,35 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danger Button</title>
+    <title>Click Here</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body class="red-screen">
-    <button class="danger-btn" onclick="window.location.href='/hacked'">Click Here</button>
+    <div id="click-message" class="click-message">Tap the red screen</div>
+
+    <div class="curtain-container">
+        <div class="curtain left"></div>
+        <div class="curtain right"></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let tapMessage = document.getElementById("click-message");
+            let curtainContainer = document.querySelector(".curtain-container");
+
+            function openCurtain() {
+                tapMessage.style.display = "none";  
+                curtainContainer.classList.add("open");  
+
+                setTimeout(() => {
+                    window.location.href = "/hacked";  
+                }, 2500);
+            }
+
+            curtainContainer.addEventListener("click", openCurtain, { once: true });
+        });
+    </script>
 </body>
 </html>
