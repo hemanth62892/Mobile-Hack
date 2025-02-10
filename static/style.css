@@ -3,11 +3,11 @@ body {
     text-align: center;
     font-family: Arial, sans-serif;
     overflow: hidden;
-    background-color: red; /* Ensures red screen */
+    background-color: red;
     color: white;
 }
 
-/* Warning Message (Stays Even After Alert Disappears) */
+/* Warning Message */
 .warning-message {
     font-size: 32px;
     color: yellow;
@@ -23,25 +23,58 @@ body {
     100% { opacity: 0.5; }
 }
 
-/* Hacked Alert Popup (Disappears After 3 Sec) */
-.alert-popup {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: black;
-    padding: 20px;
-    color: red;
-    border: 5px solid red;
-    box-shadow: 0px 0px 10px red;
+/* Curtain Animation */
+.curtain-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    z-index: 9999;
 }
 
-/* Alert Buttons */
+.curtain {
+    width: 50%;
+    height: 100%;
+    background: darkred;
+    position: absolute;
+    top: 0;
+    transition: transform 2.5s ease-in-out;
+}
+
+.curtain.left {
+    left: 0;
+    transform: translateX(0);
+}
+
+.curtain.right {
+    right: 0;
+    transform: translateX(0);
+}
+
+/* Open Curtain Animation */
+.curtain-container.open .curtain.left {
+    transform: translateX(-100%);
+}
+
+.curtain-container.open .curtain.right {
+    transform: translateX(100%);
+}
+
+/* Buttons */
 .alert-btn {
     background: white;
     color: black;
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 20px;
+    padding: 15px 25px;
+    margin: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    border: none;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.alert-btn:hover {
+    background: yellow;
 }
