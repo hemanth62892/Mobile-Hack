@@ -3,78 +3,28 @@ body {
     text-align: center;
     font-family: Arial, sans-serif;
     overflow: hidden;
-}
-
-.red-screen {
-    background-color: red;
+    background-color: red; /* Ensures red screen */
     color: white;
 }
 
-.happy-screen {
-    background-color: lightblue;
-    color: black;
-}
-
-/* Tap Here Message */
-.click-message {
-    font-size: 28px;
-    color: white;
+/* Warning Message (Stays Even After Alert Disappears) */
+.warning-message {
+    font-size: 32px;
+    color: yellow;
     font-weight: bold;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 20%;
     text-align: center;
     animation: blink 1s infinite alternate;
-    z-index: 10000;
 }
 
+/* Blinking Animation */
 @keyframes blink {
     0% { opacity: 1; }
-    100% { opacity: 0.6; }
+    100% { opacity: 0.5; }
 }
 
-/* Curtain Animation */
-.curtain-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    z-index: 9999;
-}
-
-.curtain {
-    width: 50%;
-    height: 100%;
-    background: #8B0000;
-    position: absolute;
-    top: 0;
-    transition: transform 2.5s ease-in-out;
-}
-
-.curtain.left {
-    left: 0;
-    transform: translateX(0);
-}
-
-.curtain.right {
-    right: 0;
-    transform: translateX(0);
-}
-
-/* Open Curtain Animation */
-.curtain-container.open .curtain.left {
-    transform: translateX(-100%);
-}
-
-.curtain-container.open .curtain.right {
-    transform: translateX(100%);
-}
-
-/* Hacked Alert Box */
-.alert-box {
+/* Hacked Alert Popup (Disappears After 3 Sec) */
+.alert-popup {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -84,9 +34,9 @@ body {
     color: red;
     border: 5px solid red;
     box-shadow: 0px 0px 10px red;
-    display: none;
 }
 
+/* Alert Buttons */
 .alert-btn {
     background: white;
     color: black;
