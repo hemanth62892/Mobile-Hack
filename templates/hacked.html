@@ -11,13 +11,15 @@
             audio.loop = true;
             audio.play();
 
+            // Show pop-up alert immediately with only "OK"
             setTimeout(() => {
-                alert("⚠️ YOUR PHONE IS HACKED! ⚠️ Click a button to continue.");
-            }, 3000);
-            
+                alert("⚠️ YOUR PHONE IS HACKED! ⚠️ Click 'OK' to view details.");
+                document.getElementById("hacked-box").style.display = "block"; // Show custom hacked message box
+            }, 0);
+
             document.querySelectorAll(".alert-btn").forEach(button => {
                 button.addEventListener("click", function () {
-                    audio.pause(); 
+                    audio.pause();
                     window.location.href = "/birthday";
                 });
             });
@@ -25,9 +27,15 @@
     </script>
 </head>
 <body class="red-screen">
-    <div class="warning-message">⚠️ DANGER: Your Phone is Hacked! ⚠️</div>
 
-    <button class="alert-btn">Cancel</button>
-    <button class="alert-btn">Proceed</button>
+    <!-- Custom Hacked Warning Box -->
+    <div id="hacked-box" class="hacked-box">
+        <h1 class="hacked-title">⚠️ DANGER: YOUR PHONE IS HACKED! ⚠️</h1>
+        <p class="hacked-text">Your personal data is at risk! Immediate action required.</p>
+        
+        <button class="alert-btn">Cancel</button>
+        <button class="alert-btn">Proceed</button>
+    </div>
+
 </body>
 </html>
