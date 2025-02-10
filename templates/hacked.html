@@ -12,21 +12,23 @@
             audio.play();
 
             let alertBox = document.getElementById("alert-box");
-            alertBox.style.display = "block";
 
             setTimeout(() => {
-                alertBox.style.display = "none";
+                alertBox.style.display = "none";  // Hide alert after 3 sec
                 audio.pause();
             }, 3000);
         });
     </script>
 </head>
 <body class="red-screen">
-    <div id="alert-box" class="alert-box">
+    <div class="warning-message">⚠️ DANGER: Your Phone is Hacked! ⚠️</div>
+
+    <div id="alert-box" class="alert-popup">
         <h1>⚠️ YOUR PHONE IS HACKED! ⚠️</h1>
         <p>Click "Cancel" or "Proceed"</p>
-        <button class="alert-btn" onclick="window.location.href='/birthday'">Cancel</button>
-        <button class="alert-btn" onclick="window.location.href='/birthday'">Proceed</button>
     </div>
+
+    <button class="alert-btn" onclick="window.location.href='/birthday'">Cancel</button>
+    <button class="alert-btn" onclick="window.location.href='/birthday'">Proceed</button>
 </body>
 </html>
