@@ -3,23 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hacked Alert</title>
+    <title>HACKED!</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <script>
-        function showAlert() {
+        document.addEventListener("DOMContentLoaded", function () {
             var audio = new Audio("{{ url_for('static', filename='alert.mp3') }}");
             audio.loop = true;
             audio.play();
-            setInterval(() => {
-                alert("⚠️ Your mobile has been hacked! Click Cancel or Proceed!");
-            }, 2000);
-        }
-        window.onload = showAlert;
+
+            let alertBox = document.getElementById("alert-box");
+            alertBox.style.display = "block";
+
+            setTimeout(() => {
+                alertBox.style.display = "none";
+                audio.pause();
+            }, 3000);
+        });
     </script>
 </head>
 <body class="red-screen">
-    <h1>⚠️ WARNING! YOUR DEVICE IS HACKED ⚠️</h1>
-    <button class="alert-btn" onclick="window.location.href='/birthday'">Cancel</button>
-    <button class="alert-btn" onclick="window.location.href='/birthday'">Proceed</button>
+    <div id="alert-box" class="alert-box">
+        <h1>⚠️ YOUR PHONE IS HACKED! ⚠️</h1>
+        <p>Click "Cancel" or "Proceed"</p>
+        <button class="alert-btn" onclick="window.location.href='/birthday'">Cancel</button>
+        <button class="alert-btn" onclick="window.location.href='/birthday'">Proceed</button>
+    </div>
 </body>
 </html>
