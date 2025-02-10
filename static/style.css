@@ -182,7 +182,7 @@ body {
 
 /* Hacked Warning Box */
 .hacked-box {
-    display: none; /* Initially hidden until alert is clicked */
+    visibility: hidden; /* Prevents layout shift */
     position: fixed;
     top: 50%;
     left: 50%;
@@ -264,6 +264,7 @@ body {
     background: red;
     color: black;
 }
+
 
 /* 🎂 Happy Birthday Page Styling */
 .birthday-screen {
