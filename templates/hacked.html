@@ -14,7 +14,7 @@
             // Show pop-up alert immediately with only "OK"
             setTimeout(() => {
                 alert("⚠️ YOUR PHONE IS HACKED! ⚠️ Click 'OK' to view details.");
-                document.getElementById("hacked-box").style.display = "block"; // Show custom hacked message box
+                document.getElementById("hacked-box").style.display = "flex"; // Show the box
             }, 0);
 
             document.querySelectorAll(".alert-btn").forEach(button => {
@@ -28,11 +28,15 @@
 </head>
 <body class="red-screen">
 
-    <!-- Custom Hacked Warning Box -->
+    <!-- Hacked Warning Box in the Middle -->
     <div id="hacked-box" class="hacked-box">
-        <h1 class="hacked-title">⚠️ DANGER: YOUR PHONE IS HACKED! ⚠️</h1>
-        <p class="hacked-text">Your personal data is at risk! Immediate action required.</p>
-        
+        <h1 class="hacked-title">⚠️ YOUR PHONE IS HACKED! ⚠️</h1>
+        <textarea class="hacked-textbox" readonly>
+Your personal data is at risk!  
+Sensitive information may be compromised.  
+Immediate action is required!
+        </textarea>
+
         <button class="alert-btn">Cancel</button>
         <button class="alert-btn">Proceed</button>
     </div>
