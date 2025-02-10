@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body class="red-screen">
-    <div id="click-message" class="click-message">Tap the red screen</div>
+    <div id="click-message" class="click-message">Click Anywhere to Open Curtain 😈</div>
 
     <div class="curtain-container">
         <div class="curtain left"></div>
@@ -28,7 +28,7 @@
                 }, 2500);
             }
 
-            curtainContainer.addEventListener("click", openCurtain, { once: true });
+            document.body.addEventListener("click", openCurtain, { once: true });
         });
     </script>
 </body>
