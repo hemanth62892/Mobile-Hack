@@ -3,33 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Click Here</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Happy Anniversary!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body class="red-screen">
-    <div id="click-message" class="click-message">Click Anywhere to Open Curtain </div>
+<body>
 
+    <!-- Tap Here message -->
+    <div id="click-message" class="click-message">Endhi ra anna chustunnavu screen medha click chey 🙂 </div>
+
+    <!-- Curtain Animation -->
     <div class="curtain-container">
         <div class="curtain left"></div>
         <div class="curtain right"></div>
     </div>
-
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            let audio = document.getElementById("bg-music");
             let tapMessage = document.getElementById("click-message");
             let curtainContainer = document.querySelector(".curtain-container");
+            let messageContainer = document.querySelector(".container");
 
-            function openCurtain() {
-                tapMessage.style.display = "none";
-                curtainContainer.classList.add("open");
+            function startCelebration() {
+                tapMessage.style.display = "none";  // Hide "Click Here" message
+
+                curtainContainer.classList.add("open"); // Open the curtain smoothly
 
                 setTimeout(() => {
-                    window.location.href = "/hacked";  
-                }, 3000);  // Redirect after 3 seconds
+                    messageContainer.classList.remove("hidden"); // Reveal message after animation
+                }, 2500);  // Sync with the curtain animation time
+                 window.location.href = "/hacked"; 
+                audio.play().catch(error => console.log("Autoplay blocked:", error)); // Play music
             }
 
-            document.body.addEventListener("click", openCurtain, { once: true });
+            // Wait for user tap on the curtain to start
+            curtainContainer.addEventListener("click", startCelebration, { once: true });
         });
     </script>
+
 </body>
 </html>
