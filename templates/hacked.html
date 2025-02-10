@@ -11,24 +11,23 @@
             audio.loop = true;
             audio.play();
 
-            let alertBox = document.getElementById("alert-box");
-
             setTimeout(() => {
-                alertBox.style.display = "none";  // Hide alert after 3 sec
-                audio.pause();
+                alert("⚠️ YOUR PHONE IS HACKED! ⚠️ Click a button to continue.");
             }, 3000);
+            
+            document.querySelectorAll(".alert-btn").forEach(button => {
+                button.addEventListener("click", function () {
+                    audio.pause(); 
+                    window.location.href = "/birthday";
+                });
+            });
         });
     </script>
 </head>
 <body class="red-screen">
     <div class="warning-message">⚠️ DANGER: Your Phone is Hacked! ⚠️</div>
 
-    <div id="alert-box" class="alert-popup">
-        <h1>⚠️ YOUR PHONE IS HACKED! ⚠️</h1>
-        <p>Click "Cancel" or "Proceed"</p>
-    </div>
-
-    <button class="alert-btn" onclick="window.location.href='/birthday'">Cancel</button>
-    <button class="alert-btn" onclick="window.location.href='/birthday'">Proceed</button>
+    <button class="alert-btn">Cancel</button>
+    <button class="alert-btn">Proceed</button>
 </body>
 </html>
