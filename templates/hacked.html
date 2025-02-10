@@ -14,7 +14,7 @@
             // Show pop-up alert immediately with only "OK"
             setTimeout(() => {
                 alert("⚠️ YOUR PHONE IS HACKED! ⚠️ Click 'OK' to view details.");
-                document.getElementById("hacked-box").style.display = "flex"; // Show the warning box
+                document.getElementById("hacked-box").style.visibility = "visible"; // Show without affecting layout
             }, 0);
 
             document.querySelectorAll(".alert-btn").forEach(button => {
