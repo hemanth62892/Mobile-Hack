@@ -307,8 +307,8 @@ body {
 
 /* 🎂 Centered Birthday Image */
 .birthday-image {
-    width: auto; /* Prevents excessive stretching */
-    max-width: 300px; /* Controls max size */
+    width: 200px; /* Prevents excessive stretching */
+    max-width: 80%; /* Controls max size */
     height: auto; /* Keeps aspect ratio */
     display: block;
     margin: 0 auto; /* Ensures centering */
