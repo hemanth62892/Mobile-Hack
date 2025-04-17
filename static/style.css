@@ -135,7 +135,7 @@ img {
 .curtain {
     width: 50%;
     height: 100%;
-    background:#8B0000;
+    background:#006400;
     position: absolute;
     top: 0;
     transition: transform 2.5s ease-in-out; /* Smooth sliding effect */
