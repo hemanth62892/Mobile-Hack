@@ -305,7 +305,7 @@ body {
     font-weight: bold;
 }
 
-/* 🎂 Centered Birthday Image */
+/* /* 🎂 Centered Birthday Image */
 .birthday-image {
     width: auto; /* Prevents excessive stretching */
     max-width: 300px; /* Controls max size */
@@ -313,7 +313,7 @@ body {
     display: block;
     margin: 0 auto; /* Ensures centering */
     border-radius: 15px;
-    box-shadow: 0px 0px 15px rgba(255, 20, 147, 0.5);
+    box-shadow: 0px 0px 15px rgba(255, 20, 147, 0.5); */
 }
 
 /* Fade-in effect */
